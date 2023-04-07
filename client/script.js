@@ -6,6 +6,7 @@ const chatContainer = document.querySelector('#chat_container');
 
 let loadInterval;
 
+// generates loading dots appear 1 by 1 
 function loader(element) {
   element.textContent = '.'
 
@@ -18,6 +19,7 @@ function loader(element) {
   }, 300)
 }
 
+// makes text appear in type animation 1 by 1
 function typeText (element, text) {
   let index = 0;
 
@@ -29,4 +31,13 @@ function typeText (element, text) {
       clearInterval(interval);
     }
   }, 20)
+}
+
+// always generates random ID
+function generateUniqueId() {
+  const timestamp = Date.now();
+  const randomNumber = Math.random();
+  const hexadecimalString = randomNumber.toString(16);
+
+  return `id-${timestamp}-${hexadecimalString}`;
 }
